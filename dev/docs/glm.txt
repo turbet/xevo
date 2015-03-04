@@ -1,0 +1,26 @@
+XEvo needs glm as third party library installed:
+fev 2015, used GLM released: 0.9.6.3
+linux
+	http://glm.g-truc.net/0.9.6/index.html
+	http://sourceforge.net/projects/ogl-math/files/
+
+	> unzip glm-0.9.6.3
+	> cd glm
+	> mkdir build
+	> cd build
+	> cmake ..
+	> make
+	> sudo make install
+
+	glm is installed in /usr/local/include/glm
+
+	add n CMakeList.txt
+    find_package(GLM REQUIRED)
+    include_directories(${GLM_INCLUDE_DIRS})
+    link_directories(${GLM_LIBRARY_DIRS})
+    add_definitions(${GLM_DEFINITIONS})
+
+    if(NOT GLM_FOUND)
+            message(Error "GLM not found")
+    endif(NOT GLM_FOUND)
+
